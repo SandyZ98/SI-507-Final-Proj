@@ -7,6 +7,9 @@ reddit_read_only = praw.Reddit(client_id="61-p7o_TjdbEqg",	# your client id
                                user_agent="Sandy Zhao")	# your user agent
 
 class RedditScraper:
+    """
+    A class for scraping data from Reddit based on university subreddits.
+    """
     def check_university(self, name):
         universities = {
             "university of michigan": "uofm",
@@ -30,6 +33,25 @@ class RedditScraper:
                 print("Invalid date entered. Please try again.")
 
     def scrape_reddit(self, subreddit_name=None, start_date=None):
+        """
+        Scrapes data from the specified university subreddit and returns a dictionary of relevant information.
+
+        Args:
+            subreddit_name (str): name of the university subreddit to scrape (default None)
+            start_date (int): Unix timestamp representing the earliest date to include in the results (default None)
+
+        Returns:
+            dict: a dictionary containing the following information for each post:
+                  - Title
+                  - Post Text
+                  - ID
+                  - Total Comments
+                  - Created On
+                  - Post URL
+                  - Original Content
+                  - Subreddit
+        """
+
         if subreddit_name is None:
             subreddit_name = input("Please give the name of the university from the list below (q to quit): '\n' University of Michigan; '\n' Michigan State University; '\n' Wayne State University; '\n' Central Michigan University; '\n'Eastern Michigan University; '\n'Oakland University")
             if subreddit_name.lower() == "q":
@@ -78,6 +100,13 @@ class RedditScraper:
         return posts_dict
 
 def look():
+    """Function to prompt user to look at data.
+    Parameters:
+    None
+
+    Returns:
+    bool: True if user wants to look at data, False otherwise.
+    """
     while True:
         update = input("Do you want to take a look at the data? Enter 'Yes' or 'No': ")
         if update.lower() == "yes":
