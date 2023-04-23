@@ -1,6 +1,5 @@
 import praw
 import datetime
-import pandas as pd
 
 
 reddit_read_only = praw.Reddit(client_id="61-p7o_TjdbEqg",	# your client id
@@ -14,10 +13,7 @@ class RedditScraper:
             "michigan state university": "msu",
             "wayne state university": "waynestate",
             "central michigan university": "centralmich",
-            "grand valley state university": "GVSU",
-            "western michigan university": "WMU",
             "eastern michigan university": "emu",
-            "baker college": "Baker College",
             "oakland university": "oaklanduniversity"
         }
         return universities.get(name.lower())
@@ -35,9 +31,7 @@ class RedditScraper:
 
     def scrape_reddit(self, subreddit_name=None, start_date=None):
         if subreddit_name is None:
-            subreddit_name = input("Please type the name of the subreddit from the following subreddits: \
-                            University of Michigan; Michigan State University;Wayne State University;Central Michigan University;Grand Valley State University;Western Michigan University;Eastern Michigan University;Baker College;Oakland University\
-                            (q to quit)")
+            subreddit_name = input("Please give the name of the university from the list below (q to quit): '\n' University of Michigan; '\n' Michigan State University; '\n' Wayne State University; '\n' Central Michigan University; '\n'Eastern Michigan University; '\n'Oakland University")
             if subreddit_name.lower() == "q":
                 print("Thank you! See you next time!")
                 return None
@@ -55,8 +49,6 @@ class RedditScraper:
             "Title": [],
             "Post Text": [],
             "ID": [],
-            "Score": [],
-            "Upvote Ratio": [],
             "Total Comments": [],
             "Created On": [],
             "Post URL": [],
@@ -72,10 +64,6 @@ class RedditScraper:
                     posts_dict["Post Text"].append(post.selftext)
                 # Unique ID of each post
                     posts_dict["ID"].append(post.id)
-                # The score of a post
-                    posts_dict["Score"].append(post.score)
-                # Upvote Ratio of a post
-                    posts_dict["Upvote Ratio"].append(post.upvote_ratio)
                 # Total number of comments inside the post
                     posts_dict["Total Comments"].append(post.num_comments)
                 # Date the post was Created
