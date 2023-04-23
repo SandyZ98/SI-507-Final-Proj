@@ -27,10 +27,14 @@ This program has a variety of command line prompts. Here is a breakdown of the i
 
 * UserInterfaceReddit
   * TitleInterface
-    * A function that interacts with the user by displaying information about the posts in the reddit.The user is asked for input to determine which information to display, such as recent posts, posts with the most comments, and top words in the post titles.
+    * A function that interacts with the user by displaying information about the title of the posts in the reddit.The user is asked for input to determine which information to display, such as recent posts, posts with the most comments, and top words in the post titles.
   * PostInterface
+    * A function that interacts with the user by displaying information about the text of the posts in the reddit.The user is asked for input to determine which information to display, such as recent posts, posts with the most comments, and top words in the post titles.
   * CombineInterface
+    * User could choose to save the current dictionary alone, combine it with the previous dictionary, or not save.
   * SaveInterface
+    * Provides a user interface for saving a given `post` object as a JSON file.
+* Exit
 
 
 
