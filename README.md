@@ -21,4 +21,16 @@ requests pandas,praw,nltk,matplotlib,and webbrowser
 ### Built-in packages
 json,datetime,ssl,and string
 
+### Interaction and Presentation
+
+This program has a variety of command line prompts. Here is a breakdown of the interactive components:
+
+* UserInterfaceReddit
+  * TitleInterface
+  * PostInterface
+  * CombineInterface
+  * SaveInterface
+
+
+
 
