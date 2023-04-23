@@ -27,6 +27,7 @@ This program has a variety of command line prompts. Here is a breakdown of the i
 
 * UserInterfaceReddit
   * TitleInterface
+    * A function that interacts with the user by displaying information about the posts in the reddit.The user is asked for input to determine which information to display, such as recent posts, posts with the most comments, and top words in the post titles.
   * PostInterface
   * CombineInterface
   * SaveInterface
