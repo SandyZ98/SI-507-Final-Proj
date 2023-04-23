@@ -15,7 +15,7 @@ Reddit, one of the most widely used social platforms in the US, is the source of
 ### API 
 The current system does not require API keys as most of the data has already been stored in the cache. However, a Reddit API must be applied to access the data, and if a new key is not applied, the system will use the default one.  
 
-If you would like to scrape new data, Please go to https://www.reddit.com/dev/api to apply an API key (it's free :grin:).
+If you would like to scrape new data, please go to https://www.reddit.com/dev/api to apply an API key (it's free :grin:).
 
 ### PIP Installations
 requests pandas,praw,nltk,matplotlib,and webbrowser
