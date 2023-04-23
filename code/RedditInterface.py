@@ -6,7 +6,7 @@ import Combine as Combine
 import LoadandSave as save
 
 
-def CommentInterface(new_dict):
+def TitleInterface(new_dict):
     """
     A function that interacts with the user by displaying information about the posts in the reddit.
     The user is asked for input to determine which information to display, such as recent posts, posts with the most comments, and top words in the post titles.
@@ -61,7 +61,7 @@ def CommentInterface(new_dict):
             print('\nBye Bye!\n')
             return
     elif userInput == '2':
-        print("Would you like to see the plot instead?: '\n' 1 = Yes; '\n' 2 = No; '\n' 3 = Quit.")
+        print("Would you like to look at the plot instead?: '\n' 1 = Yes; '\n' 2 = No; '\n' 3 = Quit.")
         userInput2 = input()
         if userInput2 == '1':
             print(graph.plot_top_words_frequency(graph.top_words_frequency(new_dict, 'Title')))
@@ -79,18 +79,17 @@ def CommentInterface(new_dict):
 
 def PostInterface(new_dict):
     """
-        Prompts the user to choose whether to save the current dictionary alone, combine it with an existing dictionary, or not save.
-    User can also choose to write out the dictionary as a json file or not.
+    A function that interacts with the user by displaying information about the posts in the reddit.
+    The user is asked for input to determine which information to display, such as recent posts, posts with the most comments, and top words in the post titles.
 
     Parameters:
     -----------
     new_dict : dict
-        The current dictionary to be saved or combined.
+        A dictionary containing information about the reddit posts.
 
     Returns:
     --------
-    dict : A new dictionary that is either the same as the current dictionary, combined with an existing dictionary,
-           or an empty dictionary if the user chooses not to save.
+    None
     """
     print("Let's look at the posts together")
     print("Would you like to see the most recent five posts?: '\n' 1 = Yes; '\n' 2 = No; '\n' 3 = Quit.")
@@ -182,7 +181,7 @@ def UserInterfaceReddit():
             userInput = input()
 
             if userInput == '1':
-                CommentInterface(new_dict)
+                TitleInterface(new_dict)
                 Combine.CombineInterface(new_dict)
                 save.SaveInterface (new_dict)
                 UserInterfaceReddit()
